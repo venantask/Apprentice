@@ -1,9 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprentice Mentor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+        .cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+        .cta a {
+            background: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .cta a:hover {
+            background: #45a049;
+        }
+        .features {
+            margin-top: 2rem;
+        }
+        .features h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background: #333;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, world!</h1>
+    <header>
+        <h1>Welcome to Apprentice Mentor</h1>
+        <p>Your path to a successful career starts here!</p>
+    </header>
+    <div class="container">
+        <section class="hero">
+            <h1>Empower Your Career</h1>
+            <p>We help apprentices like you gain valuable skills and build a brighter future. Download our free course to get started today!</p>
+            <div class="cta">
+                <a href="your-course.pdf" download>Download Free Course</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </section>
+        <section class="features">
+            <h2>What You'll Learn</h2>
+            <ul>
+                <li>How to find the right mentor for your career path</li>
+                <li>Step-by-step guide to succeeding in apprenticeships</li>
+                <li>Top tips for balancing work and studies</li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Apprentice Mentor. All rights reserved.</p>
+    </footer>
 </body>
 </html>
