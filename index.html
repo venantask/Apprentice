@@ -10,17 +10,29 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #111;
+            background: linear-gradient(150deg, #fff 60%, #333 40%);
             color: #fff;
         }
 
-        /* Slim Header */
+        /* Header with Neon Glow */
         header {
             background: #000;
             color: white;
             text-align: center;
             padding: 1rem 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #e63946;
+            text-shadow: 0 0 10px #e63946, 0 0 20px #e63946, 0 0 30px #e63946;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #ccc;
         }
 
         .container {
@@ -33,13 +45,14 @@
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #e63946;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            color: #ccc;
+            color: #ddd;
         }
 
         /* Video Section */
@@ -53,7 +66,7 @@
             height: 340px;
             border: none;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* Call to Action Button */
@@ -66,12 +79,12 @@
             border: none;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px #e63946, 0 0 20px #e63946;
         }
 
         .cta button:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px #ff3366, 0 0 30px #ff3366;
         }
 
         /* Testimonials Section */
@@ -82,6 +95,7 @@
         .testimonials h2 {
             color: #00ffcc;
             margin-bottom: 1rem;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
         }
 
         .testimonial {
@@ -93,6 +107,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            box-shadow: 0 0 10px #00ffcc;
         }
 
         .testimonial img {
@@ -117,6 +132,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             border: 2px solid #ff00cc;
+            color: #333;
         }
 
         .form-container h2 {
@@ -181,14 +197,14 @@
 <body>
     <header>
         <h1>Apprentice Mentor</h1>
-        <p>Discover the secrets to building a thriving career</p>
+        <p>Watch this video to unlock your potential!</p>
     </header>
 
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Discover the Secrets to Success</h1>
-            <p>Watch this free video and unlock tools to build a successful career!</p>
+            <h1>Achieve Your Goals</h1>
+            <p>Discover the secrets to success and start your journey today.</p>
         </section>
 
         <!-- Video Section -->
@@ -200,45 +216,10 @@
         <div class="cta">
             <button onclick="showForm()">Sign Up Now</button>
         </div>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials">
-            <h2>What Others Are Saying</h2>
-            <div class="testimonial">
-                <img src="https://via.placeholder.com/60" alt="User photo">
-                <p>"This course changed my life! Highly recommend it to everyone."</p>
-            </div>
-            <div class="testimonial">
-                <img src="https://via.placeholder.com/60" alt="User photo">
-                <p>"Amazing content and easy to follow. Helped me land my dream job!"</p>
-            </div>
-        </section>
-
-        <!-- Form Section -->
-        <div class="form-container" id="form-container" style="display: none;">
-            <h2>Sign Up Now</h2>
-            <form id="signup-form">
-                <label for="email">Email (required)</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-                <label for="phone">Phone Number (optional)</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                <p class="note">Fill in your phone number for a personalized phone call</p>
-
-                <button type="submit">Submit</button>
-            </form>
-        </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Apprentice Mentor. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Show form when the button is clicked
-        function showForm() {
-            document.getElementById('form-container').style.display = 'block';
-        }
-    </script>
 </body>
 </html>
