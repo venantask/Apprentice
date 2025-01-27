@@ -22,10 +22,7 @@
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
-        }
-        .hero {
             text-align: center;
-            padding: 2rem 0;
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -33,45 +30,57 @@
         }
         .hero p {
             font-size: 1.2rem;
-            line-height: 1.5;
             margin-bottom: 2rem;
         }
-        .cta {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
+        .video-container {
+            margin: 2rem 0;
         }
-        .cta a {
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 340px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .cta a, button {
             background: #4CAF50;
             color: white;
             padding: 0.8rem 1.5rem;
             text-decoration: none;
             font-size: 1.2rem;
             border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
             transition: background 0.3s ease;
         }
-        .cta a:hover {
+        .cta a:hover, button:hover {
             background: #45a049;
         }
-        .features {
-            margin-top: 2rem;
+        .form-container {
+            margin: 2rem 0;
+            text-align: left;
         }
-        .features h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
+        .form-container label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+            font-weight: bold;
         }
-        .features ul {
-            list-style: none;
-            padding: 0;
+        .form-container input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-        .features li {
-            margin: 1rem 0;
-            font-size: 1.1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .form-container button {
+            display: block;
+            width: 100%;
+        }
+        .note {
+            font-size: 0.9rem;
+            color: #666;
         }
         footer {
             text-align: center;
@@ -84,29 +93,76 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Apprentice Mentor</h1>
-        <p>Your path to a successful career starts here!</p>
+        <h1>Apprentice Mentor</h1>
+        <p>Learn the skills to succeed in your career</p>
     </header>
+
     <div class="container">
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Empower Your Career</h1>
-            <p>We help apprentices like you gain valuable skills and build a brighter future. Download our free course to get started today!</p>
-            <div class="cta">
-                <a href="your-course.pdf" download>Download Free Course</a>
-                <a href="#contact">Contact Us</a>
-            </div>
+            <h1>Learn The Blueprint To Succeed</h1>
+            <p>Our free course gives you the tools to start your journey. Watch the video and sign up to get exclusive access!</p>
         </section>
-        <section class="features">
-            <h2>What You'll Learn</h2>
-            <ul>
-                <li>How to find the right mentor for your career path</li>
-                <li>Step-by-step guide to succeeding in apprenticeships</li>
-                <li>Top tips for balancing work and studies</li>
-            </ul>
-        </section>
+
+        <!-- Video Section -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" allowfullscreen></iframe>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta">
+            <button onclick="showForm()">Sign Up Now</button>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-container" id="form-container" style="display: none;">
+            <h2>Sign Up to Get Exclusive Content</h2>
+            <form id="signup-form">
+                <label for="email">Email (required)</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number (optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <p class="note">Fill in your phone number for a personalized phone call</p>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
+
     <footer>
         <p>&copy; 2025 Apprentice Mentor. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Show form when the button is clicked
+        function showForm() {
+            document.getElementById('form-container').style.display = 'block';
+        }
+
+        // Handle form submission
+        document.getElementById('signup-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            // Get form data
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            // Send data to the server
+            const response = await fetch('https://your-server.com/api/save-data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, phone }),
+            });
+
+            if (response.ok) {
+                alert('Thank you for signing up! Check your email for access.');
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>
