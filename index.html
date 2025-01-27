@@ -10,26 +10,40 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(150deg, #fff 60%, #333 40%);
+            background: white;
             color: #333;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Glowing Bar */
+        .glowing-bar {
+            height: 5px; /* Thinner bar */
+            background: #cc99ff; /* Purple color */
+            box-shadow: 0 0 5px #cc99ff, 0 0 20px #cc99ff, 0 0 30px #cc99ff;
         }
 
         /* Header */
         header {
-            background: #000;
-            color: white;
+            background: #c3aed6;
             text-align: center;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
+            position: relative;
         }
 
         header h1 {
             font-size: 2rem;
-            color: white;
+            font-weight: bold;
         }
 
         header p {
             font-size: 1rem;
-            color: #ccc;
+            color: #f2f2f2;
+        }
+
+        .header-glowing-bar {
+            position: absolute;
+            bottom: 0; /* Move the glowing bar to the bottom of the header */
+            width: 100%;
         }
 
         .container {
@@ -67,7 +81,7 @@
 
         /* Call to Action Button */
         .cta button {
-            background: #e63946;
+            background: #c3aed6;
             color: white;
             padding: 1rem 2rem;
             font-size: 1.2rem;
@@ -80,21 +94,28 @@
 
         .cta button:hover {
             transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* Testimonials Section */
         .testimonials {
-            margin: 3rem 0;
+            margin: 0;
+            background: #c3aed6;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+            position: relative; /* Allows glowing bar to be positioned absolutely */
+            overflow: hidden; /* Prevents overflow issues */
         }
 
         .testimonials h2 {
-            color: #e63946;
-            margin-bottom: 1rem;
+            color: white;
+            margin-bottom: 1.5rem;
         }
 
         .testimonials-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             gap: 1rem;
         }
 
@@ -103,6 +124,7 @@
             border-radius: 10px;
             padding: 1rem;
             flex: 1;
+            max-width: 230px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -114,30 +136,42 @@
             height: auto;
             border-radius: 10px;
             margin-bottom: 1rem;
-            max-height: 150px;
+            max-height: 100px;
             object-fit: cover;
         }
 
         .testimonial p {
             color: #333;
-            font-size: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Glowing Bar for Testimonials */
+        .testimonials-glowing-bar {
+            position: absolute;
+            top: 0; /* Place at the top of the testimonials section */
+            left: 0; /* Ensure it starts at the left edge */
+            width: 100%; /* Stretch it to the full width */
+            height: 5px; /* Thickness of the bar */
+            background: #cc99ff; /* Purple color */
+            box-shadow: 0 0 10px #cc99ff, 0 0 20px #cc99ff, 0 0 30px #cc99ff;
         }
 
         /* Footer */
         footer {
+            background: #c3aed6;
             text-align: center;
-            margin-top: 2rem;
-            padding: 1rem 0;
-            background: #000;
+            padding: 1.5rem 0;
+            position: relative;
             color: white;
-            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <h1>Apprentice Mentor</h1>
         <p>Watch the video below to unlock your potential!</p>
+        <div class="header-glowing-bar glowing-bar"></div>
     </header>
 
     <div class="container">
@@ -156,27 +190,29 @@
         <div class="cta">
             <button onclick="showForm()">Sign Up Now</button>
         </div>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials">
-            <h2>What Others Are Saying</h2>
-            <div class="testimonials-container">
-                <div class="testimonial">
-                    <img src="https://via.placeholder.com/300x150" alt="Testimonial 1">
-                    <p>"This course changed my life! Highly recommended."</p>
-                </div>
-                <div class="testimonial">
-                    <img src="https://via.placeholder.com/300x150" alt="Testimonial 2">
-                    <p>"Amazing content and easy to follow. A game changer!"</p>
-                </div>
-                <div class="testimonial">
-                    <img src="https://via.placeholder.com/300x150" alt="Testimonial 3">
-                    <p>"Helped me land my dream job. Thank you so much!"</p>
-                </div>
-            </div>
-        </section>
     </div>
 
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <div class="testimonials-glowing-bar glowing-bar"></div>
+        <h2>What Others Are Saying</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/230x100" alt="Testimonial 1">
+                <p>"This course changed my life! Highly recommended."</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/230x100" alt="Testimonial 2">
+                <p>"Amazing content and easy to follow. A game changer!"</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/230x100" alt="Testimonial 3">
+                <p>"Helped me land my dream job. Thank you so much!"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Apprentice Mentor. All rights reserved.</p>
     </footer>
