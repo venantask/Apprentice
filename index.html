@@ -10,21 +10,22 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f9;
-            color: #333;
+            background: #111;
+            color: #fff;
         }
 
+        /* Slim Header */
         header {
             background: #000;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 1rem 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .container {
             padding: 2rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
@@ -38,7 +39,7 @@
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            color: #333;
+            color: #ccc;
         }
 
         /* Video Section */
@@ -73,6 +74,40 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            margin: 3rem 0;
+        }
+
+        .testimonials h2 {
+            color: #00ffcc;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial {
+            background: #222;
+            border: 2px solid #00ffcc;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #e63946;
+        }
+
+        .testimonial p {
+            color: #ccc;
+            font-size: 1rem;
+            margin: 0;
+        }
+
         /* Form Section */
         .form-container {
             margin: 2rem 0;
@@ -81,6 +116,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 2rem;
+            border: 2px solid #ff00cc;
         }
 
         .form-container h2 {
@@ -145,14 +181,14 @@
 <body>
     <header>
         <h1>Apprentice Mentor</h1>
-        <p>Your gateway to professional success</p>
+        <p>Discover the secrets to building a thriving career</p>
     </header>
 
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
             <h1>Discover the Secrets to Success</h1>
-            <p>Sign up now to access our free resources and take the first step toward your dream career!</p>
+            <p>Watch this free video and unlock tools to build a successful career!</p>
         </section>
 
         <!-- Video Section -->
@@ -162,8 +198,21 @@
 
         <!-- Call to Action -->
         <div class="cta">
-            <button onclick="showForm()">Get Started</button>
+            <button onclick="showForm()">Sign Up Now</button>
         </div>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Others Are Saying</h2>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/60" alt="User photo">
+                <p>"This course changed my life! Highly recommend it to everyone."</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/60" alt="User photo">
+                <p>"Amazing content and easy to follow. Helped me land my dream job!"</p>
+            </div>
+        </section>
 
         <!-- Form Section -->
         <div class="form-container" id="form-container" style="display: none;">
